@@ -1,0 +1,49 @@
+<div class = "register-container">
+    <div class = "left-panel">
+        <h1>Register to get more features</h1>
+        <h4>Already have an account? Log in <a href="/Login">here</a></h4>
+    </div>
+    <div class = "centred-panel">
+        <img src="/assets/img/register.png" class = "img">
+    </div>
+    <div class = "right-panel">
+        <div class = "register-panel">
+            <h2>Register here</h2>
+            <form [formGroup]="registerForm" autocomplete="off" novalidate (ngSubmit)="registerUser(registerForm.value)">
+                <div class="name">
+                    <div class="name-input">
+                        <input type="text" id="name" formControlName="name" class="form-control" placeholder="Name" />
+                    </div>
+                </div>
+                <div class="email">
+                    <div class="email-input">
+                        <input type="email" id="email" formControlName="email" class="form-control" placeholder="Email"/>
+                    </div>
+                    <div class="email-error">
+                        <em *ngIf="validateControl('email') && hasError('email', 'email')">Please provide a valid email</em>
+                        <em *ngIf="validateControl('email') && hasError('email', 'required')">Email is required</em>
+                    </div>
+                </div>
+                <div class="password">
+                    <div class="password-input">
+                        <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password"/>
+                    </div>
+                    <div class="password-error">
+                        <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
+                    </div>
+                </div>
+                <div class="confirmPass">
+                    <div class="confirmPass-input">
+                        <input type="password" id="confirm" formControlName="confirm" class="form-control" placeholder="Repeat password"/>
+                    </div>
+                </div>
+                <br>
+                <div class="button">
+                    <div class="but">          
+                        <button type="submit" class="bth" [disabled]="!registerForm.valid">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

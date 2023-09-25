@@ -1,0 +1,91 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, rgb(2, 122, 118), rgb(56, 2, 56));
+}
+
+.left-panel {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+}
+
+.left-panel h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.left-panel h4 {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.centred-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centred-panel .img {
+    width: 80%;
+}
+
+.right-panel {
+    flex: 1;
+    text-align: center;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-panel .register-panel {
+    text-align: center;
+    flex: 1;
+    padding: 2rem;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.h2,
+.name,
+.email,
+.password,
+.confirmPass {
+    margin: 10px;
+}
+
+.email-error,
+.password-error {
+    color: aqua;
+}
+
+.register-panel {
+    text-align: center;
+    width: 100%; 
+    max-width: 400px; 
+}
+
+.register-panel h2 {
+    font-size: 2rem;
+    color: aqua;
+}
+
+.bth {
+    width: 250px;
+    height: 35px;
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    cursor: pointer; 
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.bth:hover {
+    background-color: #0056b3; 
+}
+
+
