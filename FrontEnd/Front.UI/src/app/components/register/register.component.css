@@ -57,8 +57,11 @@
     margin: 10px;
 }
 
+.name-error,
 .email-error,
-.password-error {
+.password-error,
+.confirm-error
+ {
     color: aqua;
 }
 
