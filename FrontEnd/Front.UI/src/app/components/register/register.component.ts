@@ -1,6 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserForRegistrationDto } from 'src/app/_interfaces/userReg.module';
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -10,8 +9,12 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
+
+
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
+  passwordsMatchError = false;
 
   constructor(private authService: AuthenticationService) { }
 
@@ -23,7 +26,7 @@ export class RegisterComponent implements OnInit {
       confirm: new FormControl('',[Validators.required])
     });
   }
-
+  
   validateControl = (controlName: string) => {
     const control = this.registerForm.get(controlName);
     return control ? control.invalid && control.touched : false;
@@ -36,6 +39,15 @@ export class RegisterComponent implements OnInit {
 
   public registerUser = (registerFormValue: any) => {
     const formValues = { ...registerFormValue };
+
+    const password = formValues.password;
+    const passwordConfirmed = formValues.confirm;
+    if (password !== passwordConfirmed) {
+      this.passwordsMatchError = true; 
+      return; 
+    } else {
+      this.passwordsMatchError = false; 
+    }
 
     const user: UserForRegistrationDto = {
       name: formValues.name,

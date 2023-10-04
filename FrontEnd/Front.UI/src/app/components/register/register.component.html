@@ -41,6 +41,7 @@
                     </div>
                     <div class="confirm-error">
                         <em *ngIf="validateControl('confirm') && hasError('confirm', 'required')">Password confirm is required</em>
+                        <em *ngIf="passwordsMatchError">Passwords do not match</em>
                     </div>
                 </div>
                 <br>
