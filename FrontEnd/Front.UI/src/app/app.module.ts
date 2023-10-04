@@ -17,7 +17,7 @@ import { TestComponent } from './components/test/test.component';
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    TestComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
