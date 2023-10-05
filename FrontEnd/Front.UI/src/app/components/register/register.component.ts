@@ -12,9 +12,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit{
   registerForm!: FormGroup;
   passwordsMatchError = false;
+  showPassword = true;
+  showPassword2 = true;
 
   constructor(private authService: AuthenticationService) { }
 
@@ -27,9 +29,12 @@ export class RegisterComponent implements OnInit {
     });
   }
   
-  validateControl = (controlName: string) => {
-    const control = this.registerForm.get(controlName);
-    return control ? control.invalid && control.touched : false;
+  handleButtonClick() {
+    this.showPassword = !this.showPassword;
+  }
+  
+  handleButtonClick2() {
+    this.showPassword2 = !this.showPassword2;
   }
 
   hasError = (controlName: string, errorName: string) => {
@@ -40,6 +45,7 @@ export class RegisterComponent implements OnInit {
   public registerUser = (registerFormValue: any) => {
     const formValues = { ...registerFormValue };
 
+    
     const password = formValues.password;
     const passwordConfirmed = formValues.confirm;
     if (password !== passwordConfirmed) {

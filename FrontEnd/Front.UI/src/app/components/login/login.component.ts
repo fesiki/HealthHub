@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   errorMessage: string = '';
   showError!: boolean;
+  showPassword = true;
   constructor(private authService: AuthenticationService, private router: Router, private route: ActivatedRoute) { }
   
   ngOnInit(): void {
@@ -26,6 +27,11 @@ export class LoginComponent implements OnInit {
     })
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
+
+  handleButtonClick() {
+    this.showPassword = !this.showPassword;
+  }
+
   validateControl = (controlName: string) => {
     const control = this.loginForm.get(controlName);
     return control ? control.invalid && control.touched : false;

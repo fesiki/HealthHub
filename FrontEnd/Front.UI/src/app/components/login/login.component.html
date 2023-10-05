@@ -20,8 +20,14 @@
                 </div>
                 <div class="password">
                     <div class="input-Password">
-                        <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password"/>
+                        <input *ngIf = "showPassword; else TextType" type="password" id="password" formControlName="password" class="form-control" placeholder="Password"/>
+                        <button (click)="handleButtonClick()">
+                            <img class="img-bth" [src]="showPassword? 'assets/img/eye_hide.png' : 'assets/img/eye_show.png'" alt="eye-photo">
+                        </button>
                     </div>
+                    <ng-template #TextType>
+                        <input type="text" id="password" formControlName="password" class="form-control" placeholder="Password"/>
+                    </ng-template>
                     <div class="req-passwd">
                         <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
                     </div>

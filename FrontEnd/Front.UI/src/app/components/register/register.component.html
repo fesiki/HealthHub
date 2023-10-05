@@ -29,15 +29,27 @@
                 </div>
                 <div class="password">
                     <div class="password-input">
-                        <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password"/>
+                        <input *ngIf = "showPassword2; else TextTypePass" type="password" id="password" formControlName="password" class="form-control" placeholder="Password"/>
+                        <button (click)="handleButtonClick2()">
+                            <img class = "img-bth"  [src]="showPassword2 ? 'assets/img/eye_hide.png' : 'assets/img/eye_show.png'" alt="eye-photo">
+                        </button>
                     </div>
+                    <ng-template #TextTypePass>
+                        <input type="text" id="password" formControlName="password" class="form-control" placeholder="Password"/>
+                    </ng-template>
                     <div class="password-error">
                         <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
                     </div>
                 </div>
                 <div class="confirmPass">
                     <div class="confirmPass-input">
-                        <input type="password" id="confirm" formControlName="confirm" class="form-control" placeholder="Repeat password"/>
+                        <input *ngIf = "showPassword; else TextType" type="password" id="confirm" formControlName="confirm" class="form-control" placeholder="Repeat password"/>                              
+                        <button (click)="handleButtonClick()">
+                            <img class = "img-bth"  [src]="showPassword ? 'assets/img/eye_hide.png' : 'assets/img/eye_show.png'" alt="eye-photo">
+                        </button>
+                        <ng-template #TextType>
+                            <input type="text" id="confirm" formControlName="confirm" class="form-control" placeholder="Repeat password"/>
+                        </ng-template>
                     </div>
                     <div class="confirm-error">
                         <em *ngIf="validateControl('confirm') && hasError('confirm', 'required')">Password confirm is required</em>

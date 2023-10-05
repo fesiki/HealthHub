@@ -23,6 +23,41 @@
     margin-top: 1rem;
 }
 
+.img-bth {
+    width: 30px;
+    height: 30px;
+}
+
+.img-bth-show {
+    width: 20px;
+    height: 20px;
+}
+
+.password-input,
+.confirmPass-input {
+    position: relative;
+  }
+
+  
+  .password-input input[type="password"],
+  .password-input input[type="text"],
+  .confirmPass-input input[type="password"],
+  .confirmPass-input input[type="text"] {
+    padding-right: 30px; 
+  }
+  
+  .password-input button,
+  .confirmPass-input button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px; 
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }  
+
 .centred-panel {
     display: flex;
     justify-content: center;
