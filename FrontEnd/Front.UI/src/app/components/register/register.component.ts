@@ -42,6 +42,11 @@ export class RegisterComponent implements OnInit{
     return control ? control.hasError(errorName) : false;
   }
 
+  validateControl = (controlName: string) => {
+    const control = this.registerForm.get(controlName);
+    return control ? control.invalid && control.touched : false;
+  }
+
   public registerUser = (registerFormValue: any) => {
     const formValues = { ...registerFormValue };
 

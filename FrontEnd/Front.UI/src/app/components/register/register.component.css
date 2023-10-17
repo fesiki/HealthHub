@@ -26,12 +26,9 @@
 .img-bth {
     width: 30px;
     height: 30px;
+    margin-right: 5px;
 }
 
-.img-bth-show {
-    width: 20px;
-    height: 20px;
-}
 
 .password-input,
 .confirmPass-input {
@@ -50,7 +47,7 @@
   .confirmPass-input button {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 5px;
     bottom: 0;
     width: 30px; 
     border: none;

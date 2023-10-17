@@ -7,7 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TestComponent } from './components/test/test.component';
+import { MainComponent } from './components/main/main.component';
 
 
 
@@ -17,7 +17,7 @@ import { TestComponent } from './components/test/test.component';
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    TestComponent
+    MainComponent
   ],
   imports: [
     BrowserModule,
