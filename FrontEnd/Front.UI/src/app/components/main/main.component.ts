@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
 
+  isUserAuthenticated = false;
   tabItem: HTMLElement[] = [];
   tabContent: HTMLElement[] = [];
 
