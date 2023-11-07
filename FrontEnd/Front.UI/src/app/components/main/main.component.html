@@ -1,26 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>FrontUI</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthyHub</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="wrapper">
     <header class="header">
       <div class="container">
         <div class="header_inner">
           <a href="#!" class="logo">
-            <img src="assets/img/Logo.svg" alt="logo">
+            <img class="logo_img" src="img/Logo.svg" alt="logo">
           </a>
           <nav class="menu">
+            <button class="menu_btn">
+              <span class="menu_btn-span"></span>
+              <span class="menu_btn-span"></span>
+              <span class="menu_btn-span"></span>
+            </button>
             <ul class="menu_list">
               <li class="menu_list-item">
                 <a href="#!" class="menu_list-link">Home</a>
@@ -29,19 +33,12 @@
                 <a href="#!" class="menu_list-link">About Us</a>
               </li>
               <li class="menu_list-item">
-                <a href="app/components/product-item/index.html" class="menu_list-link">How to use</a>
+                <a href="#!" class="menu_list-link">How to use</a>
               </li>
-              <li *ngIf='!isUserAuthenticated' class="menu_list-item">
+              <li class="menu_list-item">
                 <button class="menu_list-button">
                   <p class="menu_list-button_text">
-                    <a href="Login" class="">Log in</a>
-                  </p>
-                </button>
-              </li>
-              <li *ngIf='isUserAuthenticated' class="menu_list-item">
-                <button class="menu_list-button">
-                  <p class="menu_list-button_text">
-                    <a href="Login" class="">Username</a>
+                    <a href="#" class="">Log in</a>
                   </p>
                 </button>
               </li>
@@ -55,7 +52,7 @@
         <div class="container">
           <button class="solutions_button">
             <p class="solutions_button_text">Health Matters</p>
-            <img src="assets/img/heart.svg" alt="heart" class="solution_button_heart">
+            <img src="img/heart.svg" alt="heart" class="solution_button_heart">
           </button>
           <h1 class="section-title solutions_title"><span class="solutions_title-blue">One Step Solution</span><br>
             for all your dietary<br>needs.</h1>
@@ -65,18 +62,18 @@
               <input class="form_input" type="text" placeholder="Search your product">
               <div class="form_buttons">
                 <button class="form_button">
-                  <img src="assets/img/form_button_icon-1.svg" alt="">
+                  <img src="img/form_button_icon-1.svg" alt="">
                 </button>
                 <button class="form_button">
-                  <img src="assets/img/form_button_icon-2.svg" alt="">
+                  <img src="img/form_button_icon-2.svg" alt="">
                 </button>
                 <button class="form_button">
-                  <img src="assets/img/form_button_icon-3.svg" alt="">
+                  <img src="img/form_button_icon-3.svg" alt="">
                 </button>
               </div>
             </div>
           </form>
-          <img class="doctor_img" src="assets/img/doctor_img.png" alt="doctor_img">
+          <img class="doctor_img" src="img/docto_img.png" alt="">
         </div>
       </section>
       <section class="futures">
@@ -85,13 +82,13 @@
             <h2 class="futures_title">FEATURES WE PROVIDE</h2>
             <h1 class="section_title futures_main_title">
               Calculating BMI<br>is easier
-              <img src="assets/img/heart_rate.svg" alt="">
+              <img src="img/heart_rate.svg" alt="">
             </h1>
             <p class="futures_subtitle">We calculate your BMI index from<br>data like age, height, weight.</p>
           </div>
           <div class="futures_topics">
             <div class="future_topic">
-              <img class="futures_topic_icon" src="assets/img/food_icon.svg" alt="">
+              <img class="futures_topic_icon" src="img/food_icon.svg" alt="">
               <h3 class="futures_topic_title">
                 Food Recomendation
               </h3>
@@ -100,7 +97,7 @@
               </p>
             </div>
             <div class="future_topic future_topic_bottom">
-              <img class="futures_topic_icon" src="assets/img/chatbot_icon.svg" alt="">
+              <img class="futures_topic_icon" src="img/chatbot_icon.svg" alt="">
               <h3 class="futures_topic_title">
                 Interactive Chatbot
               </h3>
@@ -109,7 +106,7 @@
               </p>
             </div>
             <div class="future_topic">
-              <img class="futures_topic_icon" src="assets/img/stats_icon.svg" alt="">
+              <img class="futures_topic_icon" src="img/stats_icon.svg" alt="">
               <h3 class="futures_topic_title">
                 Nutritional Value
               </h3>
@@ -135,84 +132,84 @@
           <div class="tabs_content">
             <div class="tabs_content_item tabs_content_item--active" id="content-1">
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/pizza.jpg" alt="pizza">
+                <img class="card_img" src="img/pizza.jpg" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
@@ -221,84 +218,84 @@
             </div>
             <div class="tabs_content_item" id="content-2">
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
                 </p>
               </div>
               <div class="card">
-                <img class="card_img" src="assets/img/ice-cream.png" alt="pizza">
+                <img class="card_img" src="img/ice-cream.png" alt="pizza">
                 <h3 class="card_title">Product Name</h3>
                 <p class="card_subtitle">
                   Lorem ipsum amet dolor, etit tu
@@ -310,19 +307,19 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="container footer_container">
+      <div class="container footer_container reverse_footer">
         <div class="footer_main">
-          <img src="assets/img//logo_footer.svg" alt="footer_logo" class="footer_logo">
-          <img src="assets/img//logo_footer2.svg" alt="footer_logo-2" class="footer_logo-2">
+          <img src="img/logo_footer.svg" alt="footer_logo" class="footer_logo">
+          <img src="img/logo_footer2.svg" alt="footer_logo-2" class="footer_logo-2">
           <p class="footer_logo-desc">
             Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam
           </p>
           <div class="footer_main-items">
-            <img src="assets/img/icon-1.svg" alt="icon-1" class="footer_main-icon">
-            <img src="assets/img/icon-2.svg" alt="icon-2" class="footer_main-icon">
-            <img src="assets/img/icon-3.svg" alt="icon-3" class="footer_main-icon">
-            <img src="assets/img/icon-4.svg" alt="icon-4" class="footer_main-icon">
-            <img src="assets/img/icon-5.svg" alt="icon-5" class="footer_main-icon">
+            <img src="img/icon-1.svg" alt="icon-1" class="footer_main-icon">
+            <img src="img/icon-2.svg" alt="icon-2" class="footer_main-icon">
+            <img src="img/icon-3.svg" alt="icon-3" class="footer_main-icon">
+            <img src="img/icon-4.svg" alt="icon-4" class="footer_main-icon">
+            <img src="img/icon-5.svg" alt="icon-5" class="footer_main-icon">
           </div>
         </div>
         <nav class="footer_menu">
@@ -391,20 +388,23 @@
               <p class="footer_menu-title">Contacts us</p>
             </li>
             <li class="footer_menu-item">
-              <img class="contacts-icon" src="assets/img/email.svg" alt="email"><a href="#"
+              <img class="contacts-icon" src="img/email.svg" alt="email"><a href="#"
                 class="footer_menu-link">contact@company.com</a>
             </li>
             <li class="footer_menu-item">
-              <img class="contacts-icon" src="assets/img/phone.svg" alt=""><a href="#" class="footer_menu-link">(414) 687 -
+              <img class="contacts-icon" src="img/phone.svg" alt=""><a href="#" class="footer_menu-link">(414) 687 -
                 5892</a>
             </li>
             <li class="footer_menu-item">
-              <img class="contacts-icon" src="assets/img/location.svg" alt=""><a href="#" class="footer_menu-link">794 Mcallister
+              <img class="contacts-icon" src="img/location.svg" alt=""><a href="#" class="footer_menu-link">794
+                Mcallister
                 <br> St
                 San Francisco, 94102</a>
             </li>
           </ul>
         </nav>
+      </div>
+      <div class="copyright_container">
         <span class="footer-spliter"></span>
         <div class="copyright">
           <div class="copyright_title">Copyright © 2022</div>
@@ -416,6 +416,7 @@
       </div>
     </footer>
   </div>
+  <script src="main.js"></script>
 </body>
 </html>
 

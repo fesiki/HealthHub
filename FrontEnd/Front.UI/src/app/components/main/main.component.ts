@@ -39,4 +39,13 @@ export class MainComponent {
       contentItem.classList.add('tabs_content_item--active');
     }
   }
+  const menuBtn = document.querySelector('.menu_btn') as HTMLDivElement | null;
+  const menu = document.querySelector('.menu_list') as HTMLUListElement | null;
+
+  if (menuBtn && menu) {
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('menu_list--active');
+    });
+}
+
 }
