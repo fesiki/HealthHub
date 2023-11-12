@@ -3,6 +3,8 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@an
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserForRegistrationDto } from 'src/app/_interfaces/userReg.module';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import {} from 'gapi.auth2';
+import { GoogleAuthcService } from 'src/app/services/google-auth/google-authc.service';
 
 @Component({
   selector: 'app-register-user',
@@ -23,8 +25,12 @@ export class RegisterComponent implements OnInit{
 
   fieldValues: { [key: string]: any } = {};
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService, private googleAuth: GoogleAuthcService) { }
 
+  registerWithGoogle(){
+    this.googleAuth.login();
+  }
+  
   ngOnInit(): void {
     this.registerForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
@@ -254,7 +260,12 @@ export class RegisterComponent implements OnInit{
     
     const password = formValues.password;
     const passwordConfirmed = formValues.confirm;
-    if (password !== passwordConfirmed) {
+    if((password === '' && passwordConfirmed === '') || (password === null && passwordConfirmed === null) || (password === undefined && passwordConfirmed === undefined))
+    {
+      this.passwordsMatchError = false;
+      return;
+    }
+    else if (password !== passwordConfirmed && (password === '' && passwordConfirmed === '')) {
       this.passwordsMatchError = true; 
       return; 
     } else {

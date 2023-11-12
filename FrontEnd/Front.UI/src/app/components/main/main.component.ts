@@ -1,17 +1,18 @@
-import { Component } from '@angular/core'; 
+import { Component, OnInit } from '@angular/core'; 
+import { GoogleAuthcService } from 'src/app/services/google-auth/google-authc.service';
 
 @Component({
   selector: 'app-main', 
    templateUrl: './main.component.html', 
   styleUrls: ['./main.component.css'] 
 })
-export class MainComponent {
+export class MainComponent implements OnInit{
 
   isUserAuthenticated = false;
   tabItem: HTMLElement[] = [];
   tabContent: HTMLElement[] = [];
 
-  constructor() {
+  constructor(private google: GoogleAuthcService) {
     this.tabItem = Array.from(document.querySelectorAll<HTMLElement>('.tabs_btn'));
     this.tabContent = Array.from(document.querySelectorAll<HTMLElement>('.tabs_content_item'));
 
@@ -20,6 +21,24 @@ export class MainComponent {
     });
   }
 
+  showData()
+  {
+    const data = this.google.getProfile();
+    console.log(data);
+  }
+  
+  ngOnInit() {
+    const menuBtn: Element | null = document.querySelector('.menu_btn');
+    const menu: HTMLElement | null = document.querySelector('.menu_list');
+
+    if (menuBtn && menu) {
+      menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('menu_list--active');
+      });
+    }
+  }
+  
+  
   open(evt: MouseEvent) {
     const tabTarget = evt.currentTarget as HTMLElement;
     const button = tabTarget.dataset['button'];
@@ -39,13 +58,4 @@ export class MainComponent {
       contentItem.classList.add('tabs_content_item--active');
     }
   }
-  const menuBtn = document.querySelector('.menu_btn') as HTMLDivElement | null;
-  const menu = document.querySelector('.menu_list') as HTMLUListElement | null;
-
-  if (menuBtn && menu) {
-    menuBtn.addEventListener('click', () => {
-        menu.classList.toggle('menu_list--active');
-    });
-}
-
 }

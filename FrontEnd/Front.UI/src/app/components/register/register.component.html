@@ -1,3 +1,4 @@
+<meta name="google-signin-client_id" content="943737304120-abq6qrvf1tu4ufrn8vk4655v4ciapgn2.apps.googleusercontent.com">
 <div class="register-container">
     <div class="left-panel">
       <h1>Register to get more features</h1>
@@ -55,6 +56,8 @@
               </div>
               <div class="form-error">
                 <em *ngIf="validateControl('confirm') && hasError('confirm', 'required') || step_error">Password confirm is required</em>
+              </div>
+              <div class = "form-error">
                 <em *ngIf="passwordsMatchError || step_error">Passwords do not match</em>
               </div>
             </div>
@@ -143,6 +146,19 @@
             </div>
           </div>
         </form>
+      </div>
+      <div class="register-with">
+        <div class="continue-text">
+          <p class = "text">Or continue with</p>
+        </div>
+        <div class="services">
+            <button (click) = "registerWithGoogle()" class="button">
+              <img class = "button-img-google" alt="google" src = "assets/img/Google.png">
+            </button>
+            <button class="button">
+              <img src="assets/img/Facebook.png" alt="facebook" class="button-img-facebook">
+            </button>
+        </div>
       </div>
     </div>
   </div>
