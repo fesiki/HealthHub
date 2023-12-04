@@ -7,6 +7,71 @@
     background: linear-gradient(to right, rgb(2, 122, 118), rgb(56, 2, 56));
 }
 
+.register-with
+{
+    width: 200px;
+}
+
+.services{
+    display: flex;
+    justify-content: center;
+}
+
+.continue-text {
+    position: relative;
+}
+
+.text{
+    color: aquamarine;
+}
+
+.text::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: 50px;
+    background-color: aqua;
+    transform: translateX(50%);
+}
+
+.text::after {
+  right: 0;
+}
+
+.text::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: 50px;
+    background-color: aqua;
+    transform: translateX(-50%);
+}
+
+.text::before {
+  left: 0;
+}
+
+.services .button{
+    border-radius: 10px;
+    border: none;
+    width: 85px;
+    height: 50px;
+}
+
+.services .button .button-img-google,
+.services .button .button-img-facebook{
+    justify-content: center;
+    text-align: center;
+}
+
+.services .button .button-img-google{
+    width: 20px;
+    height: 22px;
+}
+
+
 .left-panel {
     flex: 1;
     text-align: center;
@@ -52,6 +117,14 @@
     background: transparent;
     cursor: pointer;
   }  
+
+  .right-panel {
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .right-panel .login-panel {
     text-align: center;

@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './components/main/main.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -17,7 +18,8 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

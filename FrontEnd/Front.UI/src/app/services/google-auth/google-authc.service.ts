@@ -10,7 +10,7 @@ export class GoogleAuthcService {
     this.initLogin();
   }
 
-  initLogin()
+  private initLogin()
   {
     const oAuthConfig: AuthConfig = {
       issuer: 'https://accounts.google.com',

@@ -19,7 +19,6 @@
             <img class="logo_img" src="/assets/img/Logo.svg" alt="logo">
           </a>
           <nav class="menu">
-            <button (click)="showData()"></button>
             <button class="menu_btn">
               <span class="menu_btn-span"></span>
               <span class="menu_btn-span"></span>
@@ -35,10 +34,17 @@
               <li class="menu_list-item">
                 <a href="#!" class="menu_list-link">How to use</a>
               </li>
-              <li class="menu_list-item">
+              <li *ngIf = "!checkUser()" class="menu_list-item">
                 <button class="menu_list-button">
                   <p class="menu_list-button_text">
                     <a href="Login" class="">Log in</a>
+                  </p>
+                </button>
+              </li>
+              <li *ngIf = "checkUser()" class="menu_list-item">
+                <button class="menu_list-button">
+                  <p class="menu_list-button_text">
+                    <a href="Profile" class="">Profile</a>
                   </p>
                 </button>
               </li>

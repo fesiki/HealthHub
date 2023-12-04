@@ -18,13 +18,13 @@
         <form [formGroup]="registerForm" autocomplete="off" novalidate (ngSubmit)="registerUser(registerForm.value)">
           <div class="form-step" *ngIf="slide === 0">
             <div class="form-field">
-              <input type="text" id="name" formControlName="name" class="form-control" placeholder="Name" />
+              <input type="text" id="name" formControlName="Username" class="form-control" placeholder="Name" />
               <div class="form-error">
                 <em *ngIf="validateControl('name') && hasError('name', 'required') || step_error">Name is required</em>
               </div>
             </div>
             <div class="form-field">
-              <input type="email" id="email" formControlName="email" class="form-control" placeholder="Email" />
+              <input type="email" id="email" formControlName="Email" class="form-control" placeholder="Email" />
               <div class="form-error">
                 <em *ngIf="validateControl('email') && hasError('email', 'email')">Please provide a valid email</em>
                 <em *ngIf="validateControl('email') && hasError('email', 'required') || step_error">Email is required</em>
@@ -32,13 +32,13 @@
             </div>
             <div class="form-field">
               <div class="password-input">
-                <input *ngIf="showPassword2; else TextTypePass" type="password" id="password" formControlName="password" class="form-control" placeholder="Password" />
+                <input *ngIf="showPassword2; else TextTypePass" type="password" id="password" formControlName="Password" class="form-control" placeholder="Password" />
                 <button (click)="handleButtonClick2()">
                   <img class="img-bth" [src]="showPassword2 ? 'assets/img/eye_hide.png' : 'assets/img/eye_show.png'" alt="eye-photo">
                 </button>
               </div>
               <ng-template #TextTypePass>
-                <input type="text" id="password" formControlName="password" class="form-control" placeholder="Password" />
+                <input type="text" id="password" formControlName="Password" class="form-control" placeholder="Password" />
               </ng-template>
               <div class="form-error">
                 <em *ngIf="validateControl('password') && hasError('password', 'required') || step_error">Password is required</em>
@@ -46,16 +46,16 @@
             </div>
             <div class="form-field">
               <div class="confirmPass-input">
-                <input *ngIf="showPassword; else TextType" type="password" id="confirm" formControlName="confirm" class="form-control" placeholder="Repeat password" />
+                <input *ngIf="showPassword; else TextType" type="password" id="confirm" formControlName="passwordConfirmed" class="form-control" placeholder="Repeat password" />
                 <button (click)="handleButtonClick()">
                   <img class="img-bth" [src]="showPassword ? 'assets/img/eye_hide.png' : 'assets/img/eye_show.png'" alt="eye-photo">
                 </button>
                 <ng-template #TextType>
-                  <input type="text" id="confirm" formControlName="confirm" class="form-control" placeholder="Repeat password" />
+                  <input type="text" id="confirm" formControlName="passwordConfirmed" class="form-control" placeholder="Repeat password" />
                 </ng-template>
               </div>
               <div class="form-error">
-                <em *ngIf="validateControl('confirm') && hasError('confirm', 'required') || step_error">Password confirm is required</em>
+                <em *ngIf="validateControl('passwordConfirmed') && hasError('passwordConfirmed', 'required') || step_error">Password confirm is required</em>
               </div>
               <div class = "form-error">
                 <em *ngIf="passwordsMatchError || step_error">Passwords do not match</em>
@@ -64,25 +64,25 @@
           </div>
           <div class="form-step" *ngIf="slide === 1">
             <div class="form-field">
-              <input type="file" id="image" formControlName="image" class="form-control" />
+              <input type="file" id="image" formControlName="Url_Photo" class="form-control" />
               <div class="form-error">
                 <em *ngIf="validateControl('image') && hasError('image', 'required') || step_error">Photo is required</em>
               </div>
             </div>
             <div class="form-field">
-              <input type="date" id="birth" formControlName="birth" class="form-control" />
+              <input type="date" id="birth" formControlName="DateOfBirh" class="form-control" />
               <div class="form-error">
                 <em *ngIf="validateControl('birth') && hasError('birth', 'required') || step_error">Date of birth is required</em>
               </div>
             </div>
             <div class="form-field">
-              <input type="text" id="phone" formControlName="phone" class="form-control" placeholder="Phone" />
+              <input type="text" id="phone" formControlName="Phone" class="form-control" placeholder="Phone" />
               <div class="form-error">
                 <em *ngIf="validateControl('phone') && hasError('phone', 'required') || step_error">Phone is required</em>
               </div>
             </div>
             <div class="form-field">
-              <input type="text" id="adress" formControlName="adress" class="form-control" placeholder="Address" />
+              <input type="text" id="adress" formControlName="Adress" class="form-control" placeholder="Address" />
               <div class="form-error">
                 <em *ngIf="validateControl('adress') && hasError('adress', 'required') || step_error">Adress is required</em>
               </div>
@@ -92,25 +92,25 @@
 
 
             <div class="form-field">
-              <input type="text" id="workplace" formControlName="workplace" class="form-control" placeholder="Your workplace" />
+              <input type="text" id="workplace" formControlName="Workplace" class="form-control" placeholder="Your workplace" />
               <div class="form-error">
                 <em *ngIf="validateControl('workplace') && hasError('workplace', 'required') || step_error">Workplace is required</em>
               </div>
             </div>
             <div class="form-field">
-              <input type="number" id="num" formControlName="num" min="0" max="10" class="form-control" placeholder="Rate your physical capabilities" />
+              <input type="text" id="rate" formControlName="Rate" min="0" max="10" class="form-control" placeholder="Rate your physical capabilities" />
               <div class="form-error">
                 <em *ngIf="validateControl('num') && hasError('num', 'required') || step_error">Phone is required</em>
               </div>
             </div>
             <div class="form-field">
-              <input type="text" id="phone" formControlName="yon" class="form-control" placeholder="Do you have any knowledge in diets" />
+              <input type="text" id="phone" formControlName="Knowlages" class="form-control" placeholder="Do you have any knowledge in diets" />
               <div class="form-error">
                 <em *ngIf="validateControl('yon') && hasError('yon', 'required') || step_error">Text is required</em>
               </div>
             </div>
             <div class="form-field">
-              <input type="file" id="sertificate" formControlName="sertificate" class="form-control" placeholder="Certificates" />
+              <input type="file" id="sertificate" formControlName="Sertificates" class="form-control" placeholder="Certificates" />
               <div class="form-error">
                 <em *ngIf="validateControl('sertificate') && hasError('sertificate', 'required') || step_error">Sertificate is required</em>
               </div>
@@ -154,9 +154,6 @@
         <div class="services">
             <button (click) = "registerWithGoogle()" class="button">
               <img class = "button-img-google" alt="google" src = "assets/img/Google.png">
-            </button>
-            <button class="button">
-              <img src="assets/img/Facebook.png" alt="facebook" class="button-img-facebook">
             </button>
         </div>
       </div>

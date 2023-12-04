@@ -1,14 +1,14 @@
 export interface UserForRegistrationDto {
-    email: string;
-    name: string;
-    password: string;
-    passwordConfirmed: string;
-    image: string;
-    birth: Date;
-    phone: number;
-    adress: string;
-    workplace:string;
-    num:number;
-    yon:string
-    sertificates: string;
+ Email:string;
+ Username:string;
+ Password:string;
+ //passwordConfirmed:string;
+ Workplace:string;  
+ Adress:string;
+ Phone:string;
+ Url_Photo:string;
+ Sertificates:string;
+ Knowlages:string;
+ Rate:string;
+ DateOfBirh: Date;
 }

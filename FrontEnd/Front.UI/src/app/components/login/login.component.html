@@ -36,8 +36,21 @@
                     <div class="button">
                         <button type="submit" class="bth" [disabled]="!loginForm.valid">Log in</button>
                     </div>
+                    <div class="req-em">
+                        <em *ngIf="showError">{{errorMessage}}</em>
+                    </div>
                 </div>
             </form>
+        </div>
+        <div class="register-with">
+            <div class="continue-text">
+              <p class = "text">Or continue with</p>
+            </div>
+            <div class="services">
+                <button (click)="loginWithGoogle()" class="button">
+                  <img class = "button-img-google" alt="google" src = "assets/img/Google.png">
+                </button>
+            </div>
         </div>
     </div>
 </div>

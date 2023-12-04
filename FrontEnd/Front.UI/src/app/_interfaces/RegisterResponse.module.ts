@@ -1,4 +1,11 @@
 export interface RegisterResponseDto {
-    isRegisterSuccessful: boolean;
-    errorMessage: string;
+    id: string;
+    username: string;
+    phone: string;
+    photo: string;
+    sertificates:string;
+    email:string;
+    adress: string;
+    workplace:string;
+    //errorMessage: string;
 }

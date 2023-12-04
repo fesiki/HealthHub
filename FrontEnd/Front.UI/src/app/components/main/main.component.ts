@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'; 
+import { userInfo } from 'src/app/_interfaces/userInfo.module';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { GoogleAuthcService } from 'src/app/services/google-auth/google-authc.service';
 
 @Component({
@@ -12,7 +14,7 @@ export class MainComponent implements OnInit{
   tabItem: HTMLElement[] = [];
   tabContent: HTMLElement[] = [];
 
-  constructor(private google: GoogleAuthcService) {
+  constructor(private google: GoogleAuthcService, private authService: AuthenticationService) {
     this.tabItem = Array.from(document.querySelectorAll<HTMLElement>('.tabs_btn'));
     this.tabContent = Array.from(document.querySelectorAll<HTMLElement>('.tabs_content_item'));
 
@@ -21,13 +23,21 @@ export class MainComponent implements OnInit{
     });
   }
 
-  showData()
-  {
-    const data = this.google.getProfile();
-    console.log(data);
+  checkUser() {
+    //localStorage.clear();
+    const isUserAuth = localStorage.getItem('UserisAuth');
+    if (isUserAuth === 'true') {
+      return true;
+    }
+    else if(this.google.getProfile() != undefined)
+    {
+      return true;
+    }
+    return false;
   }
   
   ngOnInit() {
+    //localStorage.clear();
     const menuBtn: Element | null = document.querySelector('.menu_btn');
     const menu: HTMLElement | null = document.querySelector('.menu_list');
 
