@@ -16,11 +16,15 @@ const routes: Routes = [
   },
   {
     path: "Registration",
-    component : RegisterComponent
+    component: RegisterComponent
   },
   {
     path: "Profile",
     component: ProfileComponent
+  },
+  {
+    path: "Detail",
+    component: DetailInfoComponent
   }
 ];
 
